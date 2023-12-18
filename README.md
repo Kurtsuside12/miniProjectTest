@@ -43,13 +43,7 @@ Usage
 *   Power up the ESP32.
 *   The device will automatically start measuring light intensity and recording the data to the SD card.
 
-Contributing
-------------
-
-Contributions to the Street Light Analysis Kit project are welcome. Please feel free to fork the repository, make changes, and submit a pull request.
-
 Acknowledgments
 ---------------
 
 *   Thanks to [Electronic Wings](https://www.electronicwings.com/) for their invaluable resources on ESP32.
-*   Appreciation to all contributors and testers who have provided feedback and suggestions.
