@@ -1,15 +1,15 @@
 #ifndef WIRELESSTRANSMISSION_H
 #define WIRELESSTRANSMISSION_H
 
+#include <Arduino.h>
 class WirelessTransmission
 {
 private:
-    String connectionType; // {"WiFi", "LoRaWAN"}
+    bool isConnected();
 
 public:
-    WirelessTransmission();
+    WirelessTransmission(String ssid, String password);
     void transmitData(const String &data);
-    bool isConnected();
 };
 
 #endif // WIRELESSTRANSMISSION_H
