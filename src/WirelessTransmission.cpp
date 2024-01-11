@@ -3,13 +3,26 @@
 
 WirelessTransmission::WirelessTransmission(String ssid, String password)
 {
-  WiFi.begin(ssid.c_str(), password.c_str());
+  SSID = ssid;
+  PASSWORD = password;
+}
+
+void WirelessTransmission::init()
+{
+  WiFi.begin(SSID.c_str(), PASSWORD.c_str());
+  Serial.print("Connecting to ");
+  Serial.print(SSID);
+  Serial.println("...");
+
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
     Serial.print(".");
   }
-  Serial.println("WiFi connected.");
+
+  Serial.println();
+  Serial.print("Connected to ");
+  Serial.println(SSID);
 }
 
 void WirelessTransmission::transmitData(const String &data)
