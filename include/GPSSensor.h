@@ -14,6 +14,7 @@ public:
     GPSSensor();
     std::pair<float, float> getLocation();
     std::pair<float, float> getFakeLocation();
+    void displayInfo();
 };
 
 #endif // GPSSENSOR_H

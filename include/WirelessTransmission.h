@@ -13,7 +13,7 @@ private:
 
 public:
     WirelessTransmission(const char *ssid, const char *password);
-    void transmitData(int objectID, int operationalStatus, const String &timestamp, float xCoordinate, float yCoordinate);
+    bool transmitData(int objectID, int operationalStatus, const String &timestamp, float xCoordinate, float yCoordinate);
     void init();
 };
 

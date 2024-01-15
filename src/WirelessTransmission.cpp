@@ -29,7 +29,7 @@ void WirelessTransmission::init()
   Serial.println(SSID);
 }
 
-void WirelessTransmission::transmitData(int objectID, int operationalStatus, const String &timestamp, float xCoordinate, float yCoordinate)
+bool WirelessTransmission::transmitData(int objectID, int operationalStatus, const String &timestamp, float xCoordinate, float yCoordinate)
 {
   if (isConnected())
   {
@@ -56,15 +56,19 @@ void WirelessTransmission::transmitData(int objectID, int operationalStatus, con
       String response = http.getString();
       Serial.println(httpResponseCode);
       Serial.println(response);
+      http.end();
+      return true;
     }
     else
     {
       Serial.print("Error on sending POST: ");
       Serial.println(httpResponseCode);
+      http.end();
+      return false;
     }
-
-    http.end();
   }
+
+  return false;
 }
 
 bool WirelessTransmission::isConnected()

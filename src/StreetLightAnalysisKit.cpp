@@ -32,6 +32,19 @@ void StreetLightAnalysisKit::analyzeStreetLight()
     // For debugging, print the data to the serial monitor
     Serial.println(String("Data: ") + objectID + ", " + operationalStatus + ", " + timestamp + ", " + location.first + ", " + location.second);
 
+    // turn the data into a csv
+    String data = String(objectID) + "," + String(operationalStatus) + "," + timestamp + "," + String(location.first) + "," + String(location.second);
+
+    sdCardStorage.storeData(data);
+
     // Transmit the data to the server
-    wirelessTransmission.transmitData(objectID, operationalStatus, timestamp, location.first, location.second);
+    if (wirelessTransmission.transmitData(objectID, operationalStatus, timestamp, location.first, location.second))
+    {
+        Serial.println("Data transmitted successfully");
+        sdCardStorage.wipeData();
+    }
+    else
+    {
+        Serial.println("Data transmission failed");
+    };
 }
