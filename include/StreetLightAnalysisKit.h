@@ -5,10 +5,7 @@
 #include "SDCardStorage.h"
 #include "WirelessTransmission.h"
 #include "GPSSensor.h"
-
-const String SSID = "ssid";
-const String PASSWORD = "password";
-
+#include <utility>
 class StreetLightAnalysisKit
 {
 private:

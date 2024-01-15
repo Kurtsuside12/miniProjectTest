@@ -21,3 +21,11 @@ float LightSensor::detectLight()
 
     return intensity;
 }
+
+float LightSensor::detectFakeLight()
+{
+    // Fake the light sensor reading
+    intensity = 0.5;
+
+    return intensity;
+}

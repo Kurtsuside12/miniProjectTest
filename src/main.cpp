@@ -5,10 +5,12 @@ StreetLightAnalysisKit streetLightAnalysisKit;
 
 void setup()
 {
+  Serial.begin(9600);
+  streetLightAnalysisKit.init();
 }
 
 void loop()
 {
   streetLightAnalysisKit.analyzeStreetLight();
-  delay(1000);
+  delay(10000);
 }

@@ -9,6 +9,7 @@ private:
 public:
     LightSensor();
     float detectLight();
+    float detectFakeLight();
 };
 
 #endif // LIGHTSENSOR_H

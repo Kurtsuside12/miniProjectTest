@@ -13,6 +13,7 @@ private:
 public:
     GPSSensor();
     std::pair<float, float> getLocation();
+    std::pair<float, float> getFakeLocation();
 };
 
 #endif // GPSSENSOR_H

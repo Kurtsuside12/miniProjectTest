@@ -2,17 +2,18 @@
 #define WIRELESSTRANSMISSION_H
 
 #include <Arduino.h>
+#include <ArduinoJson.h>
 class WirelessTransmission
 {
 private:
     bool isConnected();
 
-    String SSID;
-    String PASSWORD;
+    const char *SSID;
+    const char *PASSWORD;
 
 public:
-    WirelessTransmission(String ssid, String password);
-    void transmitData(const String &data);
+    WirelessTransmission(const char *ssid, const char *password);
+    void transmitData(int objectID, int operationalStatus, const String &timestamp, float xCoordinate, float yCoordinate);
     void init();
 };
 
